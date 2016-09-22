@@ -10,16 +10,15 @@ import UIKit
 
 class ViewController: UIViewController {
 
+    @IBOutlet weak var pageControl: UIPageControl!
+    
     override func viewDidLoad() {
         super.viewDidLoad()
-        // Do any additional setup after loading the view, typically from a nib.
+        
+        // PageViewControllerをコンテナに追加
+        let pageVC = storyboard!.instantiateViewController(withIdentifier: "PageViewController") as! PageViewController
+        addChildViewController(pageVC)
+        view.addSubview(pageVC.view)
     }
-
-    override func didReceiveMemoryWarning() {
-        super.didReceiveMemoryWarning()
-        // Dispose of any resources that can be recreated.
-    }
-
-
 }
 
